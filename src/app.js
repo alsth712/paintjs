@@ -5,6 +5,7 @@ const colors = document.getElementsByClassName("jsColor"); // 색상변경 관�
 const range = document.getElementById("jsRange"); // 선 굵기 변경 관련
 const mode = document.getElementById("jsMode"); // fill 버튼 관련
 const saveBtn = document.getElementById("jsSave"); // save 버튼 관련
+const removeBtn = document.getElementById("jsRemove"); // remove 버튼 관련
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
@@ -14,13 +15,16 @@ canvas.height = CANVAS_SIZE;
 // pixel modifier 를 설정해줘야 그림판에 선을 그을 수 있다.
 
 
-// Context 의 기본을 설정
-ctx.fillStyle = "white";                      // 배경색이 투명되는 오류 방지 => 배경색 미리 생성
-ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE); // 배경색이 투명되는 오류 방지 => 배경색 미리 생성
+// Context의 기본 캔버스 설정
+function defaultRect(){
+  ctx.fillStyle = "white";                      // 배경색이 투명되는 오류 방지 => 배경색 미리 생성
+  ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE); // 배경색이 투명되는 오류 방지 => 배경색 미리 생성
+}
 
+defaultRect();
 ctx.strokeStyle = INITIAL_COLOR; // 기본 색상 검정색으로 설정
 ctx.fillStyle = INITIAL_COLOR;   // 다시 값 검정색으로 초기화
-ctx.lineWidth = 2.5;         // 기본 선 굵기 설정
+ctx.lineWidth = 2.5;             // 기본 선 굵기 설정
 
 let painting = false;
 let filling = false;
@@ -94,7 +98,7 @@ if(canvas){
   canvas.addEventListener("mouseup", stopPainting);    // 마우스를 떼면, 페인팅 종료
   canvas.addEventListener("mouseleave", stopPainting); // 마우스가 캔버스를 벗어나면, 페인팅 종료
   canvas.addEventListener("click", handleCanvasClick); // 캔버스 클릭 시, filling이 true라면 캔버스 사이즈 만큼의 사각형 생성
-  canvas.addEventListener("contextmenu", handleCM);// 오른쪽 마우스 클릭으로 이미지저장 방지
+  canvas.addEventListener("contextmenu", handleCM);    // 오른쪽 마우스 클릭으로 이미지저장 방지
 }
 
 Array.from(colors).forEach(color => 
@@ -112,4 +116,8 @@ if(mode){
 
 if(saveBtn){
   saveBtn.addEventListener("click", handleSaveClick)
+}
+
+if(removeBtn){
+  removeBtn.addEventListener("click", defaultRect)
 }
