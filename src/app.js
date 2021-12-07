@@ -1,10 +1,11 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext('2d'); 
 // 캔버스 요소 안에서 픽셀에 접근하기 위해선, context variable 을 만드는 것을 먼저 해야함
-const colors = document.getElementsByClassName("jsColor"); // 색상변경 관련
-const range = document.getElementById("jsRange"); // 선 굵기 변경 관련
-const mode = document.getElementById("jsMode"); // fill 버튼 관련
-const saveBtn = document.getElementById("jsSave"); // save 버튼 관련
+const colors = document.getElementsByClassName("jsColor");    // 색상변경 관련
+const colorPicker = document.getElementById("jsColorPicker"); // 컬러픽커 관련
+const range = document.getElementById("jsRange");      // 선 굵기 변경 관련
+const mode = document.getElementById("jsMode");        // fill 버튼 관련
+const saveBtn = document.getElementById("jsSave");     // save 버튼 관련
 const removeBtn = document.getElementById("jsRemove"); // remove 버튼 관련
 
 const INITIAL_COLOR = "#2c2c2c";
@@ -19,6 +20,8 @@ canvas.height = CANVAS_SIZE;
 function defaultRect(){
   ctx.fillStyle = "white";                      // 배경색이 투명되는 오류 방지 => 배경색 미리 생성
   ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE); // 배경색이 투명되는 오류 방지 => 배경색 미리 생성
+  const color = localStorage.getItem('color');
+  ctx.fillStyle = color;
 }
 
 defaultRect();
@@ -52,9 +55,20 @@ function onMouseMove(event) {
 }
 
 function handleColorClick(event){
+  localStorage.clear();
   const color = event.target.style.backgroundColor; // 클릭한 컬러를 변수로 저장
   ctx.strokeStyle = color; // 기존의 기본 strokeStyle 을 target에 있는 색상으로 override함
   ctx.fillStyle = color;   // 색상 변경 클릭 시, fillStyle(paint해주는)도 색상 override함
+  localStorage.setItem('color', color);
+}
+
+function handleColorPicker(event){
+  localStorage.clear();
+  const color = event.target.value;
+  ctx.strokeStyle = color;
+  ctx.fillStyle = color;
+  colorPicker.style.backgroundColor = color;
+  localStorage.setItem('color', color);
 }
 
 function handleRangeChange(event){
@@ -105,6 +119,10 @@ Array.from(colors).forEach(color =>
   color.addEventListener("click", handleColorClick)
 );
 // colors 가 배열로 구성 되어 있으므로, for Each를 사용해서 각각의 컬러를 가져오기
+
+if(colorPicker){
+  colorPicker.addEventListener("input", handleColorPicker)
+}
 
 if(range){
   range.addEventListener("input", handleRangeChange)
