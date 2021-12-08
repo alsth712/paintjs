@@ -33,14 +33,14 @@
 ## 🖌 추가 기능
 
 - 기존 그림 지우기
-- 도형 생성
 - 컬러 픽커를 이용해 색상 변경
+- 사각형 도형 툴 생성
 
 <br />
 
 ## ➕ 참고
 
-<a href="https://nomadcoders.co/javascript-for-beginners-2">바닐라 JS로 그림판 만들기</a>
+<a href="https://nomadcoders.co/javascript-for-beginners-2">nomadcoders - 바닐라 JS로 그림판 만들기</a>
 
 <br/>
 
