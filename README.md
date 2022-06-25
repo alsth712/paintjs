@@ -9,8 +9,6 @@
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white" />
 </p>
 
----
-
 <br/>
 
 ### 링크 :
@@ -64,5 +62,9 @@
 ## ➕ 참고
 
 <a href="https://nomadcoders.co/javascript-for-beginners-2">nomadcoders - 바닐라 JS로 그림판 만들기</a>
+
+<br/>
+
+---
 
 <br/>
