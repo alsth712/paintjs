@@ -1,5 +1,3 @@
-------------
-
 <h2 align="middle">👩‍🎨paintjs🎨</h2>
 <br />
 <p align="middle">Nomadcoder의 그림판 강의를 토대로 만든 그림판입니다.</p>
@@ -11,14 +9,31 @@
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white" />
 </p>
 
-------------
+---
+
+<br/>
+
+### 링크 :
+
+### <a href="https://alsth712.github.io/paintjs/">👩‍🎨 VanillaJS로 만든 그림판 🎨</a>
+
+<br/>
+
+---
+
 <br />
 
 ## ✨ 결과 화면
 
-- 완성 후 이미지 추가하기
+이미지
 
 <br />
+
+<br />
+
+---
+
+<br/>
 
 ## ✏ 기본 기능
 
@@ -26,9 +41,13 @@
 - 색상 변경
 - 배경색 채우기
 - 선 굵기 조절
-- 파일 저장 
+- 파일 저장
 
 <br />
+
+---
+
+<br/>
 
 ## 🖌 추가 기능
 
@@ -38,13 +57,12 @@
 
 <br />
 
+---
+
+<br/>
+
 ## ➕ 참고
 
 <a href="https://nomadcoders.co/javascript-for-beginners-2">nomadcoders - 바닐라 JS로 그림판 만들기</a>
 
 <br/>
-
-
-## 📝 License
-
-This project is [MIT] licensed.
