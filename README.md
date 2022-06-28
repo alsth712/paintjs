@@ -23,7 +23,11 @@
 
 ## ✨ 결과 화면
 
-이미지
+<img src="https://user-images.githubusercontent.com/81960250/176247795-9666e776-c9ac-4b88-91ef-044b1a1476c2.gif" />
+
+<br />
+
+<img src="https://user-images.githubusercontent.com/81960250/176247822-ee0605c7-41a7-44cd-ab42-f9eb276ecf42.gif"/>
 
 <br />
 
